@@ -6,6 +6,7 @@
     "release": "bumpp -r",
     "lint": "eslint .",
     "client:build": "nr -C client build",
+    "website:dev": "nr -C website dev",
     "website:build": "nr -C website build",
     "postinstall": "npx simple-git-hooks"
   },

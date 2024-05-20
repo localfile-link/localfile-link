@@ -59,7 +59,7 @@ onMounted(() => {
             Opening file...
           </div>
 
-          <a :href="url" text-5xl decoration-offset-4 hover:underline>{{ file }}</a>
+          <a :href="url" text-5xl decoration-offset-4 hover:underline break-all>{{ file }}</a>
 
           <button mb--6 op25 hover:op100 @click="fileInit = ''">
             reset
@@ -73,7 +73,7 @@ onMounted(() => {
             v-model="file"
             placeholder="/path/to/file:line:col"
             border="~ gray/10 rounded"
-            bg-gray:5 p2 text-3xl
+            bg-gray:5 p2 text-3xl w-full
             @keydown.enter="reload()"
           >
         </template>
