@@ -6,6 +6,10 @@
   "description": "Remote links from browsers to open local files in users' local editor.",
   "author": "Anthony Fu <github@antfu.me>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/localfile-link/localfile-link.git"
+  },
   "main": "dist-electron/main/index.js",
   "debug": {
     "env": {
