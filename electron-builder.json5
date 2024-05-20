@@ -1,0 +1,49 @@
+// @see https://www.electron.build/configuration/configuration
+{
+  "$schema": "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
+  "appId": "localfile.link",
+  "asar": true,
+  "productName": "localfile.link",
+  "electronLanguages": [
+    "en_US"
+  ],
+  "directories": {
+    "output": "release/${version}"
+  },
+  "files": [
+    "dist",
+    "dist-electron"
+  ],
+  "mac": {
+    "icon": "dist/logo.png",
+    "target": [
+      "dmg"
+    ],
+    "artifactName": "${productName}-${version}-mac-installer.${ext}"
+  },
+  "win": {
+    "icon": "dist/logo.png",
+    "target": [
+      {
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      }
+    ],
+    "artifactName": "${productName}-${version}-windows-setup.${ext}"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "deleteAppDataOnUninstall": false
+  },
+  "linux": {
+    "icon": "dist/logo.png",
+    "target": [
+      "AppImage"
+    ],
+    "artifactName": "${productName}-${version}-linux.${ext}"
+  }
+}
