@@ -1,0 +1,34 @@
+{
+  "name": "electron-localfile-link",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Remote links from browsers to open local files in users' local editor.",
+  "author": "Anthony Fu <github@antfu.me>",
+  "license": "MIT",
+  "main": "dist-electron/main/index.js",
+  "debug": {
+    "env": {
+      "VITE_DEV_SERVER_URL": "http://127.0.0.1:3344/"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && electron-builder",
+    "preview": "vite preview"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "electron": "^29.1.1",
+    "electron-builder": "^24.13.3",
+    "execa": "^6",
+    "shell-env": "^4.0.1",
+    "shell-quote": "^1.8.1",
+    "vite": "^5.2.11",
+    "vite-plugin-electron": "^0.28.7",
+    "vite-plugin-electron-renderer": "^0.14.5",
+    "vue": "^3.4.27",
+    "vue-tsc": "^2.0.19"
+  }
+}

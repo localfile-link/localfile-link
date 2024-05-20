@@ -4,12 +4,13 @@
   "json.schemas": [
     {
       "fileMatch": [
-        "/*electron-builder.json5",
-        "/*electron-builder.json"
+        "/client/*electron-builder.json5",
+        "/client/*electron-builder.json"
       ],
       "url": "https://json.schemastore.org/electron-builder"
     }
   ],
+
   // Enable the ESlint flat config support
   // (remove this if your ESLint extension above v3.0.5)
   "eslint.experimental.useFlatConfig": true,
