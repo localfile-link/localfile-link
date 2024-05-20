@@ -1,7 +1,7 @@
 {
   "name": "electron-localfile-link",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "packageManager": "pnpm@9.1.1",
   "description": "Remote links from browsers to open local files in users' local editor.",
