@@ -5,6 +5,15 @@ const query = new URLSearchParams(window.location.search)
 const fileInit = ref(query.get('file'))
 const file = ref(fileInit.value)
 const url = computed(() => `localfile://${file.value?.replace(/^file:\/\//, '')}`)
+const referrer = document.referrer
+let refererUrl: URL | undefined
+
+try {
+  if (referrer && referrer !== location.href)
+    refererUrl = new URL(referrer)
+}
+catch (e) {
+}
 
 watch(file, () => {
   if (file.value)
@@ -13,6 +22,11 @@ watch(file, () => {
     query.delete('file')
   history.replaceState(null, '', `${location.pathname}?${query}`)
 })
+
+function copyPath() {
+  if (file.value)
+    navigator.clipboard.writeText(file.value)
+}
 
 function reload() {
   location.reload()
@@ -56,14 +70,22 @@ onMounted(() => {
       <div h-35 flex="~ col gap-2 justify-end items-start">
         <template v-if="fileInit">
           <div op75>
-            Opening file...
+            Opening file <template v-if="refererUrl">
+              by <span text-teal-4>{{ refererUrl.origin }}</span>
+            </template>
+            ...
           </div>
 
           <a :href="url" text-5xl decoration-offset-4 hover:underline break-all>{{ file }}</a>
 
-          <button mb--6 op25 hover:op100 @click="fileInit = ''">
-            reset
-          </button>
+          <div mb--6 flex="~ gap-2">
+            <button op25 hover:op100 @click="copyPath()">
+              copy
+            </button>
+            <button op25 hover:op100 @click="fileInit = ''">
+              reset
+            </button>
+          </div>
         </template>
         <template v-else>
           <div op75>
