@@ -43,10 +43,10 @@ onMounted(() => {
       <div border="t gray/10" mb4 mt8 h-1px w-15 />
 
       <div flex="~ gap-3">
-        <a href="https://github.com/localfile-link/website#how-it-works" target="_blank" op50 hover:underline hover:op100>
+        <a href="https://github.com/localfile-link/localfile-link#how-it-works" target="_blank" op50 hover:underline hover:op100>
           How this work?
         </a>
-        <a href="https://github.com/localfile-link" target="_blank" op50 hover:underline hover:op100>
+        <a href="https://github.com/localfile-link/localfile-link" target="_blank" op50 hover:underline hover:op100>
           GitHub
         </a>
       </div>
@@ -83,7 +83,7 @@ onMounted(() => {
 
       <p>
         <span op50>Link doesn't work? Install the client app first:</span>
-        <a href="https://github.com/localfile-link/client/releases" target="_blank" ml1 font-bold decoration-offset-4 op75 hover:underline hover:op100>Download</a>
+        <a href="https://github.com/localfile-link/localfile-link/releases" target="_blank" ml1 font-bold decoration-offset-4 op75 hover:underline hover:op100>Download</a>
       </p>
     </div>
   </div>
