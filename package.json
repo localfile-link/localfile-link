@@ -1,10 +1,10 @@
 {
   "name": "electron-localfile-link",
-  "private": true,
+  "type": "module",
   "version": "0.0.0",
+  "private": true,
   "packageManager": "pnpm@9.1.1",
-  "main": "dist-electron/main/index.js",
-  "description": "Really simple Electron + Vue + Vite boilerplate.",
+  "description": "Remote links from browsers to open local files in users' local editor.",
   "author": "Anthony Fu <github@antfu.me>",
   "license": "MIT",
   "keywords": [
@@ -14,34 +14,34 @@
     "vue3",
     "vue"
   ],
+  "main": "dist-electron/main/index.js",
   "debug": {
     "env": {
       "VITE_DEV_SERVER_URL": "http://127.0.0.1:3344/"
     }
   },
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build && electron-builder",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "release": "bumpp"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.18.1",
     "@vitejs/plugin-vue": "^5.0.4",
+    "bumpp": "^9.4.1",
     "electron": "^29.1.1",
     "electron-builder": "^24.13.3",
+    "eslint": "9.2.0",
     "execa": "^6",
     "shell-env": "^4.0.1",
+    "shell-quote": "^1.8.1",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",
     "vite": "^5.2.11",
     "vite-plugin-electron": "^0.28.7",
     "vite-plugin-electron-renderer": "^0.14.5",
     "vue": "^3.4.27",
-    "vue-tsc": "^2.0.19",
-    "eslint": "9.2.0"
-  },
-  "dependencies": {
-    "shell-quote": "^1.8.1"
+    "vue-tsc": "^2.0.19"
   }
 }
