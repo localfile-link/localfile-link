@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.9.0",
+    "custom-protocol-check": "^1.4.0",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"
   },

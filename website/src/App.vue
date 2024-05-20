@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import './composables/dark'
+import customProtocolCheck from 'custom-protocol-check'
 
 const query = new URLSearchParams(window.location.search)
 const fileInit = ref(query.get('file'))
 const file = ref(fileInit.value)
 const url = computed(() => `localfile://${file.value?.replace(/^file:\/\//, '')}`)
 const referrer = document.referrer
+const isSupported = ref<boolean | null>()
 let refererUrl: URL | undefined
 
 try {
@@ -34,9 +36,21 @@ function reload() {
 
 onMounted(() => {
   if (file.value) {
-    const a = document.createElement('a')
-    a.href = url.value
-    a.click()
+    customProtocolCheck(
+      url.value,
+      () => {
+        isSupported.value = false
+      },
+      () => {
+        isSupported.value = true
+        try {
+          window.close()
+        }
+        catch (e) {
+          console.error('Failed to selfclose')
+        }
+      },
+    )
   }
 })
 </script>
@@ -104,7 +118,7 @@ onMounted(() => {
       <div border="t gray/10" mb4 mt8 h-1px w-15 />
 
       <p>
-        <span op50>Link doesn't work? Install the client app first:</span>
+        <span :class="isSupported === false ? 'text-amber-5' : 'op50'">Link doesn't work? Install the client app first:</span>
         <a href="https://github.com/localfile-link/localfile-link/releases" target="_blank" ml1 font-bold decoration-offset-4 op75 hover:underline hover:op100>Download</a>
       </p>
     </div>
