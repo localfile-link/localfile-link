@@ -8,7 +8,7 @@ For developer tools generated reports in HTML, like [cpupro](https://github.com/
 
 ## How it works
 
-[localfile.link](https://localfile.link) try to provide a universal way to solve this problem where developers of those devtools only need to redirect users to a URL like `https://localfile.link?file=`<filepath>` without needing a dedicated dev server.
+[localfile.link](https://localfile.link) try to provide a universal way to solve this problem where developers of those devtools only need to redirect users to a URL like `https://localfile.link?file=<filepath>` without needing a dedicated dev server.
 
 Under the hook, `localfile.link` works with [client app](./client) that register a custom [deep link](https://www.electronjs.org/docs/latest/tutorial/launch-app-from-url-in-another-app) protocol to `localfile://` the browsers. The webpage will redirects users to that protocol, which launches the client to open the filepath in your editor.
 
