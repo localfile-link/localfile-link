@@ -27,8 +27,14 @@ function isTerminalEditor(editor: string) {
   return false
 }
 
+function normalizePath(filename: string) {
+  const { win32, posix } = path
+  return filename.split(win32.sep).join(posix.sep)
+}
+
 const positionRE = /:(\d+)(:(\d+))?$/
 function parseFile(file: string) {
+  file = normalizePath(decodeURIComponent(file))
   const fileName = file.replace(positionRE, '')
   const match = file.match(positionRE)
   const lineNumber = match && match[1]
