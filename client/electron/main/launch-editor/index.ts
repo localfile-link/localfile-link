@@ -29,7 +29,7 @@ function isTerminalEditor(editor: string) {
 
 function normalizePath(filename: string) {
   const { win32, posix } = path
-  return filename.split(win32.sep).join(posix.sep)
+  return filename.replaceAll(win32.sep, posix.sep)
 }
 
 const positionRE = /:(\d+)(:(\d+))?$/
