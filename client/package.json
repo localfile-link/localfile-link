@@ -1,7 +1,7 @@
 {
   "name": "electron-localfile-link",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "description": "Remote links from browsers to open local files in users' local editor.",
   "author": "Anthony Fu <github@antfu.me>",
